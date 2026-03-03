@@ -26,9 +26,10 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Please enter a valid email." }, { status: 400 });
     }
 
-    const gmailUser = process.env.GMAIL_USER;
-    const gmailAppPassword = process.env.GMAIL_APP_PASSWORD;
-    const contactReceiver = process.env.CONTACT_RECEIVER_EMAIL || gmailUser;
+    const gmailUser = process.env.GMAIL_USER?.trim();
+    const gmailAppPassword = process.env.GMAIL_APP_PASSWORD?.replace(/\s+/g, "");
+    const contactReceiverRaw = process.env.CONTACT_RECEIVER_EMAIL?.trim();
+    const contactReceiver = contactReceiverRaw && isValidEmail(contactReceiverRaw) ? contactReceiverRaw : gmailUser;
 
     if (!gmailUser || !gmailAppPassword || !contactReceiver) {
       return NextResponse.json(
@@ -47,7 +48,7 @@ export async function POST(request: Request) {
 
     await transporter.sendMail({
       from: `"Raven Contact Form" <${gmailUser}>`,
-      to: contactReceiver,
+      to: Array.from(new Set([contactReceiver, gmailUser].filter(Boolean))),
       replyTo: email,
       subject: `Raven from ${name}`,
       text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
@@ -63,7 +64,8 @@ export async function POST(request: Request) {
     });
 
     return NextResponse.json({ ok: true });
-  } catch {
+  } catch (error) {
+    console.error("CONTACT_API_ERROR", error);
     return NextResponse.json({ error: "Failed to send message. Please try again." }, { status: 500 });
   }
 }
