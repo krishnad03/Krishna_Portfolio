@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  background: radial-gradient(circle at 50% -20%, #1b1c24 0%, #070708 50%, #050506 100%);
+}
+
+body {
+  min-height: 100vh;
+}
+
+main::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+  background:
+    radial-gradient(circle at 10% 95%, rgba(255, 92, 34, 0.1), transparent 22%),
+    radial-gradient(circle at 88% 94%, rgba(255, 92, 34, 0.08), transparent 24%);
+}
+
+@media (pointer: fine) {
+  html,
+  body {
+    cursor: none;
+  }
+}
+
+.medieval-title {
+  @apply font-display uppercase tracking-[0.28em] text-transparent;
+  background-image: linear-gradient(135deg, #d9a441 20%, #ffd994 45%, #9d6e1d 85%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.section-shell {
+  @apply relative overflow-hidden rounded-2xl border border-zinc-700/70 bg-charcoal/70 p-6 backdrop-blur-sm md:p-10;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.45);
+}
+
+.ember-layer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 12% 86%, rgba(255, 92, 34, 0.11), transparent 26%),
+    radial-gradient(circle at 88% 90%, rgba(255, 92, 34, 0.09), transparent 30%),
+    radial-gradient(circle at 50% 100%, rgba(143, 16, 16, 0.25), transparent 40%);
+  pointer-events: none;
+}
+
+.smoke-layer::after {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 25% 42%, rgba(255, 255, 255, 0.04), transparent 30%),
+    radial-gradient(circle at 70% 58%, rgba(255, 255, 255, 0.035), transparent 25%);
+  animation: smokeDrift 14s ease-in-out infinite;
+}
+
+@keyframes ashFall {
+  0% {
+    transform: translate3d(0, -5vh, 0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate3d(-30px, 110vh, 0);
+    opacity: 0;
+  }
+}
+
+.animate-ashFall {
+  animation: ashFall linear infinite;
+}
+
+.flip-card {
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.7s ease;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
