@@ -1,7 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
-import { BraavosInitiation } from "@/components/initiation/BraavosInitiation";
+import { useEffect, useRef, useState } from "react";
 import { AshField } from "@/components/ui/AshField";
 import { CustomCursor } from "@/components/ui/CustomCursor";
 import { DragonVideoBackground } from "@/components/ui/DragonVideoBackground";
@@ -24,9 +23,6 @@ import { SkillsSection } from "@/sections/SkillsSection";
 import { TrainingSection } from "@/sections/TrainingSection";
 
 export default function Page() {
-  const [step, setStep] = useState(0);
-  const [entered, setEntered] = useState(false);
-  const [ignition, setIgnition] = useState(false);
   const [quoteVisible, setQuoteVisible] = useState(false);
   const [muted, setMuted] = useState(false);
   const reducedMotion = usePrefersReducedMotion();
@@ -77,35 +73,20 @@ export default function Page() {
     });
   }, [muted]);
 
-  const beginAudio = () => {
+  useEffect(() => {
     if (!ambientRef.current || muted) return;
     void ambientRef.current.play().catch(() => undefined);
-  };
 
-  const nextInitiationStep = () => {
-    beginAudio();
-    if (step < 2) {
-      setStep((s) => s + 1);
-      return;
+    if (ready && !roarPlayed) {
+      void roarRef.current?.play().catch(() => undefined);
+      setRoarPlayed(true);
     }
-    setIgnition(true);
-    if (!muted) {
-      void fireRef.current?.play().catch(() => undefined);
-      if (ready && !roarPlayed) {
-        void roarRef.current?.play().catch(() => undefined);
-        setRoarPlayed(true);
-      }
-    }
-    setTimeout(() => {
-      setEntered(true);
-      setIgnition(false);
-    }, 1100);
-  };
+  }, [muted, ready, roarPlayed, setRoarPlayed]);
 
-  const handleDragonTripleTap = useCallback(() => {
+  const handleDragonTripleTap = () => {
     setQuoteVisible(true);
     setTimeout(() => setQuoteVisible(false), 2200);
-  }, []);
+  };
 
   return (
     <main className="relative overflow-x-hidden">
@@ -115,44 +96,34 @@ export default function Page() {
       {!reducedMotion ? <CustomCursor onDragonTripleTap={handleDragonTripleTap} /> : null}
       <MuteButton muted={muted} onToggle={() => setMuted((m) => !m)} />
 
-      {!entered ? <BraavosInitiation step={step} onNext={nextInitiationStep} /> : null}
-
-      {ignition ? (
-        <div className="pointer-events-none fixed inset-0 z-[145] bg-[radial-gradient(circle_at_center,rgba(255,92,34,0.45),transparent_50%),linear-gradient(180deg,rgba(255,92,34,0.35),transparent)] animate-firePulse" />
-      ) : null}
-
       {quoteVisible ? (
         <div className="fixed bottom-6 left-1/2 z-[180] min-w-[320px] -translate-x-1/2 rounded border border-gold/50 bg-black/85 bg-[url('/assets/dragon-popup-bg.jpg')] bg-cover bg-center px-4 py-3 text-sm text-gold">
           <div className="rounded bg-black/60 p-2">Chaos isn&apos;t a pit. It&apos;s a data lake.</div>
         </div>
       ) : null}
 
-      {entered ? (
-        <>
-          <TopNav />
-          <HouseSigils />
-          <div className="relative z-10">
-            <HeroSection onThroneClick={() => window.scrollTo({ top: window.innerHeight * 0.85, behavior: "smooth" })} />
-            <SwordDivider />
-            <AboutSection />
-            <SwordDivider />
-            <JourneySection />
-            <SwordDivider />
-            <SkillsSection />
-            <SwordDivider />
-            <ProjectsSection />
-            <SwordDivider />
-            <CertificationsSection />
-            <SwordDivider />
-            <LeadershipSection />
-            <SwordDivider />
-            <TrainingSection />
-            <SwordDivider />
-            <MetricsSection />
-            <ContactSection />
-          </div>
-        </>
-      ) : null}
+      <TopNav />
+      <HouseSigils />
+      <div className="relative z-10">
+        <HeroSection onThroneClick={() => window.scrollTo({ top: window.innerHeight * 0.85, behavior: "smooth" })} />
+        <SwordDivider />
+        <AboutSection />
+        <SwordDivider />
+        <JourneySection />
+        <SwordDivider />
+        <SkillsSection />
+        <SwordDivider />
+        <ProjectsSection />
+        <SwordDivider />
+        <CertificationsSection />
+        <SwordDivider />
+        <LeadershipSection />
+        <SwordDivider />
+        <TrainingSection />
+        <SwordDivider />
+        <MetricsSection />
+        <ContactSection />
+      </div>
     </main>
   );
 }
