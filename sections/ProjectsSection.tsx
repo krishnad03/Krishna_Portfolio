@@ -16,9 +16,11 @@ export function ProjectsSection() {
             <p className="mt-1 text-sm text-zinc-300">
               {project.role} | {project.timeline}
             </p>
-            <ul className="mt-3 space-y-1 text-zinc-200">
+            <ul className="mt-3 space-y-1 text-justify text-zinc-200">
               {project.achievements.map((item) => (
-                <li key={item}>{item}</li>
+                <li key={item} className="leading-relaxed">
+                  {item}
+                </li>
               ))}
             </ul>
             <div className="mt-4 flex flex-wrap gap-2">
