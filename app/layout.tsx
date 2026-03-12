@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Cinzel, Jost } from "next/font/google";
+import localFont from "next/font/local";
+import { Jost } from "next/font/google";
 import "./globals.css";
 
-const cinzel = Cinzel({
-  subsets: ["latin"],
+const gameOfThrones = localFont({
+  src: "../public/fonts/game-of-thrones.ttf",
   variable: "--font-cinzel",
-  weight: ["400", "500", "600", "700", "800"]
+  display: "swap"
 });
 
 const jost = Jost({
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${cinzel.variable} ${jost.variable} bg-void text-zinc-100 antialiased`}>
+      <body className={`${gameOfThrones.variable} ${jost.variable} bg-void text-zinc-100 antialiased`}>
         {children}
       </body>
     </html>

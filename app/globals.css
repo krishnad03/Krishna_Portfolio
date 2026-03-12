@@ -35,16 +35,18 @@ main::after {
 
 @media (pointer: fine) {
   html,
-  body {
+  body,
+  body * {
     cursor: none;
   }
 }
 
 .medieval-title {
-  @apply font-display uppercase tracking-[0.28em] text-transparent;
+  @apply font-display uppercase tracking-[0.16em] text-transparent;
   background-image: linear-gradient(135deg, #d9a441 20%, #ffd994 45%, #9d6e1d 85%);
   -webkit-background-clip: text;
   background-clip: text;
+  text-shadow: 0 0 18px rgba(217, 164, 65, 0.12);
 }
 
 .section-shell {
