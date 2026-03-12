@@ -44,34 +44,19 @@ export function CustomCursor({ onDragonTripleTap }: Props) {
   if (!enabled) return null;
 
   return (
-    <>
-      <motion.div
-        className="pointer-events-none fixed z-[120] h-5 w-5 rounded-full border border-ember/80"
-        style={{
-          x: mouse.x - 10,
-          y: mouse.y - 10,
-          boxShadow: "0 0 18px rgba(255,92,34,0.8), 0 0 38px rgba(255,92,34,0.25)"
-        }}
-      />
-      <motion.div
-        className="pointer-events-none fixed z-[118] opacity-75"
-        style={{ x: springX, y: springY }}
-      >
-        <div className="relative h-10 w-10">
-          <Image
-            src="/assets/sigils/hand-of-king.png"
-            alt="Hand of the King cursor"
-            fill
-            sizes="40px"
-            className="object-contain drop-shadow-[0_0_14px_rgba(217,164,65,0.5)]"
-          />
-        </div>
-      </motion.div>
-      <motion.div
-        className="pointer-events-none fixed z-[119] h-2 w-2 rounded-full bg-ember/70"
-        animate={{ x: mouse.x - 3, y: mouse.y - 3, opacity: [0.6, 0.15, 0.6] }}
-        transition={{ duration: 1, repeat: Infinity }}
-      />
-    </>
+    <motion.div
+      className="pointer-events-none fixed z-[120] opacity-90"
+      style={{ x: springX, y: springY }}
+    >
+      <div className="relative h-11 w-11">
+        <Image
+          src="/assets/sigils/hand-of-king.png"
+          alt="Hand of the King cursor"
+          fill
+          sizes="44px"
+          className="object-contain drop-shadow-[0_0_10px_rgba(217,164,65,0.35)]"
+        />
+      </div>
+    </motion.div>
   );
 }

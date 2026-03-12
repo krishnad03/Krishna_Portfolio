@@ -5,6 +5,7 @@ import Image from "next/image";
 const navItems = [
   { label: "Throne", href: "#hero" },
   { label: "Battles", href: "#projects" },
+  { label: "Painted Table", href: "#design" },
   { label: "Maester's Scrolls", href: "#certifications" },
   { label: "Houses of Skill", href: "#skills" },
   { label: "Council", href: "#leadership" },

@@ -14,6 +14,7 @@ import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 import { AboutSection } from "@/sections/AboutSection";
 import { CertificationsSection } from "@/sections/CertificationsSection";
 import { ContactSection } from "@/sections/ContactSection";
+import { DesignSection } from "@/sections/DesignSection";
 import { HeroSection } from "@/sections/HeroSection";
 import { JourneySection } from "@/sections/JourneySection";
 import { LeadershipSection } from "@/sections/LeadershipSection";
@@ -112,6 +113,8 @@ export default function Page() {
         <JourneySection />
         <SwordDivider />
         <SkillsSection />
+        <SwordDivider />
+        <DesignSection />
         <SwordDivider />
         <ProjectsSection />
         <SwordDivider />
