@@ -11,7 +11,7 @@ export function ProjectsSection() {
     <Section id="projects" title="The Great Battles" subtitle="House sigil cards from real engineering campaigns.">
       <div className="space-y-5">
         {projects.map((project, idx) => (
-          <article key={project.name} className="rounded-lg border border-zinc-700 bg-black/35 p-6">
+          <article key={project.name} className="rounded-lg border border-zinc-700 bg-black/35 p-6 text-justify">
             <h3 className="font-display text-xl uppercase tracking-[0.12em] text-gold">{project.name}</h3>
             <p className="mt-1 text-sm text-zinc-300">
               {project.role} | {project.timeline}
@@ -66,7 +66,7 @@ export function ProjectsSection() {
               onClick={(e) => e.stopPropagation()}
             >
               <h4 className="font-display text-2xl uppercase tracking-[0.12em] text-gold">{projects[active].name}</h4>
-              <p className="mt-3 text-zinc-200">{projects[active].impact}</p>
+              <p className="mt-3 text-justify text-zinc-200">{projects[active].impact}</p>
               <div className="mt-5 rounded border border-zinc-700 bg-black/30 p-4 text-zinc-300">
                 Architecture diagram placeholder: add a lightweight SVG in `public/assets/architecture-pipeline.svg`.
               </div>

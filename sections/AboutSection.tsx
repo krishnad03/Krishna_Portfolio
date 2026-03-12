@@ -10,7 +10,7 @@ export function AboutSection() {
           <p className="got-copy text-sm md:text-base">CGPA: 7.80</p>
           <p className="got-copy text-sm md:text-base">Institute: Acropolis Institute of Technology and Research, Indore</p>
         </article>
-        <article className="rounded-lg border border-zinc-700 bg-black/30 p-5">
+        <article className="rounded-lg border border-zinc-700 bg-black/30 p-5 text-justify">
           <p className="got-copy text-sm md:text-base">Detail-oriented Data Engineering enthusiast with practical exposure to enterprise-grade ETL pipelines and historical data management. Looking to leverage strong problem-solving skills and data transformation expertise to build efficient, production-ready data platforms.</p>
           <p className="got-copy mt-3 text-sm md:text-base">Driven by a strong foundation in scalable architecture and change-data tracking, I focus on building reliable systems that preserve data integrity while enabling meaningful business insights. Passionate about transforming complex datasets into structured, trustworthy assets that power strategic decision-making.</p>
         </article>

@@ -23,7 +23,7 @@ export function DesignSection() {
       subtitle="Graphic design work, digital art, and visual storytelling beyond the data realm."
     >
       <div className="grid gap-5 lg:grid-cols-[1.2fr_0.8fr]">
-        <article className="rounded-xl border border-zinc-700 bg-black/35 p-6">
+        <article className="rounded-xl border border-zinc-700 bg-black/35 p-6 text-justify">
           <p className="text-zinc-200">
             I am also a graphic designer who loves to create digital art. This body of work reflects a parallel craft:
             building mood, clarity, and visual impact through design.
@@ -38,7 +38,7 @@ export function DesignSection() {
           </div>
         </article>
 
-        <article className="rounded-xl border border-gold/35 bg-[linear-gradient(145deg,rgba(217,164,65,0.1),rgba(17,18,23,0.72))] p-6">
+        <article className="rounded-xl border border-gold/35 bg-[linear-gradient(145deg,rgba(217,164,65,0.1),rgba(17,18,23,0.72))] p-6 text-justify">
           <h3 className="font-display text-lg uppercase tracking-[0.14em] text-gold">Open the Gallery</h3>
           <p className="mt-3 text-zinc-300">
             View the full graphic design portfolio in the linked Drive collection.

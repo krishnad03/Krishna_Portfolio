@@ -32,7 +32,7 @@ function Counter({ target, suffix }: { target: number; suffix: string }) {
   }, [target]);
 
   return (
-    <div ref={ref} className="font-display text-3xl text-gold md:text-4xl">
+    <div ref={ref} className="font-display text-2xl text-gold md:text-3xl">
       {value}
       {suffix}
     </div>
