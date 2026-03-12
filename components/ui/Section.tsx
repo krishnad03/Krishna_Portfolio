@@ -21,7 +21,7 @@ export function Section({ id, title, subtitle, children }: SectionProps) {
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <div className="section-shell ember-layer smoke-layer">
-        <h2 className="medieval-title text-xl md:text-3xl">{title}</h2>
+        <h2 className="medieval-title text-lg md:text-[1.75rem]">{title}</h2>
         {subtitle ? <p className="mt-3 max-w-3xl text-zinc-300">{subtitle}</p> : null}
         <div className="mt-7">{children}</div>
       </div>

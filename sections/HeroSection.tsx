@@ -21,8 +21,8 @@ export function HeroSection({ onThroneClick }: Props) {
       >
         <div className="relative">
         <p className="mb-4 font-body text-sm uppercase tracking-[0.28em] text-zinc-300">The Iron Data Throne</p>
-        <h1 className="medieval-title text-5xl md:text-8xl">Krishna</h1>
-        <h2 className="mt-4 font-display text-lg uppercase tracking-[0.2em] text-zinc-200 md:text-2xl">
+        <h1 className="medieval-title text-4xl md:text-7xl lg:text-[6.2rem]">KRISHNA</h1>
+        <h2 className="mt-5 font-body text-base uppercase tracking-[0.14em] text-zinc-100 md:whitespace-nowrap md:text-[1.7rem] lg:text-[1.95rem]">
           The Architect of the Many-Faced Database
         </h2>
         <p className="mx-auto mt-6 max-w-2xl font-body text-zinc-300">
