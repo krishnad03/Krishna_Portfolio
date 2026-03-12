@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion, useSpring } from "framer-motion";
 import { useEffect, useState } from "react";
 
@@ -53,12 +54,18 @@ export function CustomCursor({ onDragonTripleTap }: Props) {
         }}
       />
       <motion.div
-        className="pointer-events-none fixed z-[118] opacity-60"
+        className="pointer-events-none fixed z-[118] opacity-75"
         style={{ x: springX, y: springY }}
       >
-        <svg width="24" height="16" viewBox="0 0 24 16" fill="none">
-          <path d="M1 12L8 8L14 10L20 4L23 5L18 11L13 13L7 12L4 15L1 12Z" fill="#d9a441" />
-        </svg>
+        <div className="relative h-10 w-10">
+          <Image
+            src="/assets/sigils/hand-of-king.png"
+            alt="Hand of the King cursor"
+            fill
+            sizes="40px"
+            className="object-contain drop-shadow-[0_0_14px_rgba(217,164,65,0.5)]"
+          />
+        </div>
       </motion.div>
       <motion.div
         className="pointer-events-none fixed z-[119] h-2 w-2 rounded-full bg-ember/70"

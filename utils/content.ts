@@ -42,14 +42,14 @@ export const skillGroups = [
     skills: [
       { name: "Figma", value: 70 },
       { name: "Canva", value: 77 },
-      { name: "Presentation Design", value: 83 }
+      { name: "Adobe Illustrator", value: 83 }
     ]
   },
   {
     title: "Core Strengths",
     skills: [
       { name: "Leadership", value: 89 },
-      { name: "System Thinking", value: 84 },
+      { name: "Adaptability", value: 84 },
       { name: "Problem Solving", value: 91 }
     ]
   }
