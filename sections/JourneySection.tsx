@@ -37,9 +37,9 @@ export function JourneySection() {
             ) : null}
             <span className="absolute left-[-18px] top-6 h-3 w-3 rounded-full bg-ember shadow-ember" />
             <article className="relative rounded-lg border border-zinc-700 bg-black/35 p-5">
-              <p className="font-display text-xs uppercase tracking-[0.14em] text-gold">{item.place}</p>
-              <h3 className="mt-2 font-display text-lg uppercase tracking-[0.08em] text-zinc-100">{item.title}</h3>
-              <p className="mt-2 text-zinc-300">{item.details}</p>
+              <p className="font-display text-[0.72rem] uppercase tracking-[0.08em] text-gold md:text-xs">{item.place}</p>
+              <h3 className="mt-2 font-display text-base uppercase tracking-[0.04em] leading-[1.35] text-zinc-100 md:text-[1.1rem]">{item.title}</h3>
+              <p className="got-copy mt-2 text-sm text-zinc-300 md:text-base">{item.details}</p>
             </article>
           </div>
         ))}

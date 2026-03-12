@@ -13,7 +13,7 @@ const config: Config = {
       },
       fontFamily: {
         display: ["var(--font-cinzel)", "serif"],
-        body: ["var(--font-jost)", "sans-serif"]
+        body: ["var(--font-cinzel)", "serif"]
       },
       boxShadow: {
         ember: "0 0 30px rgba(255,92,34,0.35)"

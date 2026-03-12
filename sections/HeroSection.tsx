@@ -20,25 +20,25 @@ export function HeroSection({ onThroneClick }: Props) {
         transition={{ duration: 0.9, ease: "easeOut" }}
       >
         <div className="relative">
-        <p className="mb-4 font-body text-sm uppercase tracking-[0.28em] text-zinc-300">The Iron Data Throne</p>
-        <h1 className="medieval-title text-4xl md:text-7xl lg:text-[6.2rem]">KRISHNA</h1>
-        <h2 className="mt-5 font-body text-base uppercase tracking-[0.14em] text-zinc-100 md:whitespace-nowrap md:text-[1.7rem] lg:text-[1.95rem]">
+        <p className="mb-4 font-body text-xs uppercase tracking-[0.22em] text-zinc-300 md:text-sm">The Iron Data Throne</p>
+        <h1 className="medieval-title text-[3.2rem] sm:text-[4.4rem] md:text-[5.8rem] lg:text-[6.2rem]">KRISHNA</h1>
+        <h2 className="got-copy mt-3 font-body text-sm uppercase tracking-[0.08em] text-zinc-100 md:whitespace-nowrap md:text-[1.35rem] lg:text-[1.55rem]">
           The Architect of the Many-Faced Database
         </h2>
-        <p className="mx-auto mt-6 max-w-2xl font-body text-zinc-300">
+        <p className="got-copy mx-auto mt-6 max-w-2xl font-body text-sm text-zinc-300 md:text-base">
           Builder of scalable kingdoms. Keeper of historical truth. Master of transformation pipelines.
         </p>
         <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
           <button
             type="button"
             onClick={onThroneClick}
-            className="rounded border border-ember/70 bg-blood/30 px-8 py-3 font-display uppercase tracking-[0.2em] text-zinc-100 transition hover:bg-blood/50 hover:shadow-ember"
+            className="rounded border border-ember/70 bg-blood/30 px-8 py-3 font-display uppercase tracking-[0.12em] text-zinc-100 transition hover:bg-blood/50 hover:shadow-ember"
           >
             Sit on the Iron Throne
           </button>
           <a
             href="#contact"
-            className="rounded border border-gold/60 px-8 py-3 font-display uppercase tracking-[0.16em] text-gold transition hover:bg-gold/10"
+            className="rounded border border-gold/60 px-8 py-3 font-display uppercase tracking-[0.12em] text-gold transition hover:bg-gold/10"
           >
             Send a Raven
           </a>

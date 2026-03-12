@@ -21,8 +21,8 @@ export function Section({ id, title, subtitle, children }: SectionProps) {
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <div className="section-shell ember-layer smoke-layer">
-        <h2 className="medieval-title text-lg md:text-[1.75rem]">{title}</h2>
-        {subtitle ? <p className="mt-3 max-w-3xl text-zinc-300">{subtitle}</p> : null}
+        <h2 className="medieval-title text-[1.35rem] leading-[1.3] md:text-[1.55rem] lg:text-[1.7rem]">{title}</h2>
+        {subtitle ? <p className="got-copy mt-2 max-w-3xl text-sm text-zinc-300 md:text-base">{subtitle}</p> : null}
         <div className="mt-7">{children}</div>
       </div>
     </motion.section>
