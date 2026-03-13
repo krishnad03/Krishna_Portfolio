@@ -22,7 +22,7 @@ export function HeroDragonVideo() {
       >
         <video
           className="hero-dragon-video h-full w-full object-contain"
-          src="/video/hero-dragon.mp4"
+          src="/video/hero-dragon.webm"
           autoPlay
           loop
           muted
