@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { HeroDragon } from "@/components/ui/HeroDragon";
 
 type Props = {
   onThroneClick: () => void;
@@ -12,6 +13,9 @@ export function HeroSection({ onThroneClick }: Props) {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_15%,rgba(217,164,65,0.2),transparent_45%),linear-gradient(180deg,#111217_0%,#070708_70%)]" />
       <div className="absolute -top-10 left-1/2 h-36 w-36 -translate-x-1/2 rounded-full bg-zinc-100/5 blur-3xl" />
       <div className="absolute bottom-0 left-0 right-0 h-24 bg-[linear-gradient(180deg,transparent,rgba(255,92,34,0.25))] animate-firePulse" />
+      <div className="absolute inset-x-0 top-1/2 z-[1] mx-auto hidden h-[34rem] w-full max-w-5xl -translate-y-[54%] md:block">
+        <HeroDragon />
+      </div>
 
       <motion.div
         className="relative z-10 w-full max-w-4xl p-8 text-center md:p-12"

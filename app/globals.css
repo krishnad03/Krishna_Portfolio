@@ -170,6 +170,13 @@ main::after {
   animation: firePulse 4s ease-in-out infinite;
 }
 
+.hero-dragon-glow {
+  filter:
+    drop-shadow(0 0 12px rgba(255, 92, 34, 0.18))
+    drop-shadow(0 0 26px rgba(217, 164, 65, 0.14));
+  opacity: 0.85;
+}
+
 .flip-card {
   perspective: 1000px;
 }
