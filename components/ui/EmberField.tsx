@@ -1,15 +1,18 @@
 export function EmberField() {
   return (
-    <div className="pointer-events-none fixed inset-0 z-[1] overflow-hidden">
-      {Array.from({ length: 30 }).map((_, i) => (
+    <div className="pointer-events-none fixed inset-0 z-[3] overflow-hidden">
+      {Array.from({ length: 48 }).map((_, i) => (
         <span
           key={i}
-          className="absolute h-1 w-1 animate-emberFloat rounded-full bg-ember/70"
+          className="absolute animate-emberFloat rounded-full bg-ember/80 shadow-[0_0_12px_rgba(255,92,34,0.45)]"
           style={{
-            left: `${(i * 13) % 100}%`,
-            bottom: `${-4 - (i % 6) * 12}px`,
-            animationDuration: `${7 + (i % 8)}s`,
-            animationDelay: `${(i % 9) * 0.7}s`
+            left: `${(i * 11) % 100}%`,
+            bottom: `${-10 - (i % 7) * 16}px`,
+            width: `${2 + (i % 3)}px`,
+            height: `${2 + (i % 3)}px`,
+            opacity: 0.4 + (i % 4) * 0.12,
+            animationDuration: `${6 + (i % 7)}s`,
+            animationDelay: `${(i % 11) * 0.65}s`
           }}
         />
       ))}

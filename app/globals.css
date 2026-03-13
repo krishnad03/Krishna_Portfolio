@@ -25,6 +25,7 @@ html {
 body {
   min-height: 100vh;
   line-height: 1.35;
+  overflow-x: hidden;
 }
 
 main::after {
@@ -35,7 +36,8 @@ main::after {
   z-index: 3;
   background:
     radial-gradient(circle at 10% 95%, rgba(255, 92, 34, 0.1), transparent 22%),
-    radial-gradient(circle at 88% 94%, rgba(255, 92, 34, 0.08), transparent 24%);
+    radial-gradient(circle at 88% 94%, rgba(255, 92, 34, 0.08), transparent 24%),
+    radial-gradient(circle at 50% 108%, rgba(255, 92, 34, 0.22), transparent 35%);
 }
 
 @media (pointer: fine) {
@@ -74,9 +76,9 @@ main::after {
   position: absolute;
   inset: 0;
   background-image:
-    radial-gradient(circle at 12% 86%, rgba(255, 92, 34, 0.11), transparent 26%),
-    radial-gradient(circle at 88% 90%, rgba(255, 92, 34, 0.09), transparent 30%),
-    radial-gradient(circle at 50% 100%, rgba(143, 16, 16, 0.25), transparent 40%);
+    radial-gradient(circle at 12% 86%, rgba(255, 92, 34, 0.16), transparent 24%),
+    radial-gradient(circle at 88% 90%, rgba(255, 92, 34, 0.14), transparent 28%),
+    radial-gradient(circle at 50% 100%, rgba(143, 16, 16, 0.3), transparent 42%);
   pointer-events: none;
 }
 
@@ -86,27 +88,86 @@ main::after {
   inset: -20%;
   pointer-events: none;
   background:
-    radial-gradient(circle at 25% 42%, rgba(255, 255, 255, 0.04), transparent 30%),
-    radial-gradient(circle at 70% 58%, rgba(255, 255, 255, 0.035), transparent 25%);
+    radial-gradient(circle at 25% 42%, rgba(255, 255, 255, 0.045), transparent 30%),
+    radial-gradient(circle at 70% 58%, rgba(255, 255, 255, 0.04), transparent 25%),
+    radial-gradient(circle at 52% 88%, rgba(255, 92, 34, 0.07), transparent 22%);
   animation: smokeDrift 14s ease-in-out infinite;
+}
+
+.section-shell::before {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 30%;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, transparent, rgba(255, 92, 34, 0.05) 55%, rgba(92, 8, 8, 0.18)),
+    radial-gradient(circle at 18% 100%, rgba(255, 140, 0, 0.12), transparent 22%),
+    radial-gradient(circle at 82% 100%, rgba(255, 92, 34, 0.1), transparent 24%);
+}
+
+@keyframes emberFloat {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.7);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.95;
+  }
+  100% {
+    transform: translate3d(28px, -105vh, 0) scale(1.2);
+    opacity: 0;
+  }
+}
+
+.animate-emberFloat {
+  animation: emberFloat linear infinite;
 }
 
 @keyframes ashFall {
   0% {
-    transform: translate3d(0, -5vh, 0);
+    transform: translate3d(8px, -8vh, 0) rotate(0deg);
     opacity: 0;
   }
   10% {
-    opacity: 0.5;
+    opacity: 0.65;
   }
   100% {
-    transform: translate3d(-30px, 110vh, 0);
+    transform: translate3d(-34px, 110vh, 0) rotate(120deg);
     opacity: 0;
   }
 }
 
 .animate-ashFall {
   animation: ashFall linear infinite;
+}
+
+@keyframes smokeDrift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.75;
+  }
+  50% {
+    transform: translate3d(2.5%, -2%, 0) scale(1.04);
+    opacity: 1;
+  }
+}
+
+@keyframes firePulse {
+  0%,
+  100% {
+    opacity: 0.7;
+    transform: scaleY(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1.06);
+  }
+}
+
+.animate-firePulse {
+  animation: firePulse 4s ease-in-out infinite;
 }
 
 .flip-card {
