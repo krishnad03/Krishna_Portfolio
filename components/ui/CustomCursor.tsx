@@ -45,7 +45,7 @@ export function CustomCursor({ onDragonTripleTap }: Props) {
 
   return (
     <motion.div
-      className="pointer-events-none fixed z-[120] opacity-90"
+      className="pointer-events-none fixed z-[1000] opacity-90"
       style={{ x: springX, y: springY }}
     >
       <div className="relative h-11 w-11">
