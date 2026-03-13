@@ -24,12 +24,12 @@ export function TopNav() {
           </div>
         </a>
 
-        <nav className="grid flex-1 grid-cols-9 items-center gap-1 text-center">
+        <nav className="scrollbar-hide flex flex-1 items-center justify-between gap-2 overflow-x-auto whitespace-nowrap text-center">
           {navItems.map((item) => (
             <a
               key={item.label}
               href={item.href}
-              className="inline-flex min-h-[40px] items-center justify-center gap-1 rounded px-2 py-2 text-[9px] uppercase tracking-[0.08em] text-zinc-200 transition hover:text-gold md:text-[10px] lg:text-[11px]"
+              className="inline-flex min-h-[40px] shrink-0 items-center justify-center gap-1 rounded px-2 py-2 text-[9px] uppercase tracking-[0.08em] text-zinc-200 transition hover:text-gold md:text-[10px] lg:text-[11px]"
             >
               {item.icon ? (
                 <Image

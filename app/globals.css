@@ -18,6 +18,10 @@ body {
   background: radial-gradient(circle at 50% -20%, #1b1c24 0%, #070708 50%, #050506 100%);
 }
 
+html {
+  font-size: 95%;
+}
+
 body {
   min-height: 100vh;
   line-height: 1.35;
@@ -130,4 +134,13 @@ main::after {
 
 .flip-card-back {
   transform: rotateY(180deg);
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
