@@ -3,7 +3,6 @@
 import Image from "next/image";
 
 const navItems = [
-  { label: "Throne", href: "#hero" },
   { label: "Battles", href: "#projects" },
   { label: "Painted Table", href: "#design" },
   { label: "Maester's Scrolls", href: "#certifications" },
@@ -25,12 +24,12 @@ export function TopNav() {
           </div>
         </a>
 
-        <nav className="flex flex-1 items-center justify-evenly gap-2 overflow-hidden text-center">
+        <nav className="grid flex-1 grid-cols-9 items-center gap-1 text-center">
           {navItems.map((item) => (
             <a
               key={item.label}
               href={item.href}
-              className="inline-flex items-center gap-1 whitespace-nowrap text-[10px] uppercase tracking-[0.1em] text-zinc-200 transition hover:text-gold md:text-[11px]"
+              className="inline-flex min-h-[40px] items-center justify-center gap-1 rounded px-2 py-2 text-[9px] uppercase tracking-[0.08em] text-zinc-200 transition hover:text-gold md:text-[10px] lg:text-[11px]"
             >
               {item.icon ? (
                 <Image
