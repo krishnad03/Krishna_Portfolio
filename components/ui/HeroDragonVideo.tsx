@@ -1,8 +1,22 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
 
 export function HeroDragonVideo() {
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const stopAtLanding = window.setTimeout(() => {
+      video.pause();
+    }, 4800);
+
+    return () => window.clearTimeout(stopAtLanding);
+  }, []);
+
   return (
     <motion.div
       aria-hidden="true"
@@ -13,18 +27,14 @@ export function HeroDragonVideo() {
     >
       <motion.div
         className="absolute bottom-[18%] right-[17%] h-[10.5rem] w-[15rem] lg:bottom-[17%] lg:right-[19%] lg:h-[12rem] lg:w-[17rem]"
-        animate={{
-          y: [0, -8, 0, -5, 0],
-          x: [0, -10, -4, -8, 0],
-          rotate: [0, -2.5, 0.8, -1.2, 0]
-        }}
-        transition={{ duration: 6.8, ease: "easeInOut", repeat: Infinity, repeatType: "mirror" }}
+        animate={{ y: 0, x: 0, rotate: 0 }}
+        transition={{ duration: 0.2 }}
       >
         <video
+          ref={videoRef}
           className="hero-dragon-video h-full w-full object-contain"
           src="/video/hero-dragon.webm"
           autoPlay
-          loop
           muted
           playsInline
           preload="auto"

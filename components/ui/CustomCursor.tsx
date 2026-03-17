@@ -9,11 +9,10 @@ type Props = {
 };
 
 export function CustomCursor({ onDragonTripleTap }: Props) {
-  const [mouse, setMouse] = useState({ x: 0, y: 0 });
   const [clickTimes, setClickTimes] = useState<number[]>([]);
   const [enabled, setEnabled] = useState(false);
-  const springX = useSpring(0, { stiffness: 110, damping: 16 });
-  const springY = useSpring(0, { stiffness: 110, damping: 16 });
+  const springX = useSpring(0, { stiffness: 78, damping: 22, mass: 0.7 });
+  const springY = useSpring(0, { stiffness: 78, damping: 22, mass: 0.7 });
 
   useEffect(() => {
     const pointerFine = window.matchMedia("(pointer: fine)").matches;
@@ -21,9 +20,9 @@ export function CustomCursor({ onDragonTripleTap }: Props) {
     if (!pointerFine) return;
 
     const move = (e: MouseEvent) => {
-      setMouse({ x: e.clientX, y: e.clientY });
-      springX.set(e.clientX + 18);
-      springY.set(e.clientY + 10);
+      // Anchor the top of the pin near the true pointer location.
+      springX.set(e.clientX - 11);
+      springY.set(e.clientY - 2);
     };
 
     const click = () => {
@@ -48,13 +47,13 @@ export function CustomCursor({ onDragonTripleTap }: Props) {
       className="pointer-events-none fixed z-[1000] opacity-90"
       style={{ x: springX, y: springY }}
     >
-      <div className="relative h-11 w-11">
+      <div className="relative h-[42px] w-[26px] overflow-hidden">
         <Image
           src="/assets/sigils/hand-of-king.png"
           alt="Hand of the King cursor"
           fill
-          sizes="44px"
-          className="object-contain drop-shadow-[0_0_10px_rgba(217,164,65,0.35)]"
+          sizes="26px"
+          className="object-cover object-top scale-[1.22] drop-shadow-[0_0_10px_rgba(217,164,65,0.35)]"
         />
       </div>
     </motion.div>
